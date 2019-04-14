@@ -30,22 +30,22 @@ public class HomeScreen extends javax.swing.JFrame {
         ResultSet myRs = null;
         if(registerUsername.getText().length()==0)
         {
-            //invalid.setText("This field cannot be left empty");
+            invalid.setText("This field cannot be left empty");
             return false;
         }
         else {
-            //invalid.setText("");
+            invalid.setText("");
         }
         try {
             myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "n!gg3|2f@gg0t");
             myStmnt = myCon.createStatement();
             myRs = myStmnt.executeQuery("SELECT * FROM user WHERE Username = '" + registerUsername.getText() + "'");
             if(myRs.next()){
-                //invalid.setText("Username already in use");
+                invalid.setText("Username already in use");
                 return false;
             }
             else{
-                //invalid.setText("");
+                invalid.setText("");
             }
             
         } catch (Exception exp) {
@@ -67,7 +67,7 @@ public class HomeScreen extends javax.swing.JFrame {
         String u = registerPassword.getText();
         if(u.length()==0)
         {
-            //invalid_password.setText("This field cannot be left empty");
+            invalid_password.setText("This field cannot be left empty");
             return false;
         }
         
@@ -85,11 +85,11 @@ public class HomeScreen extends javax.swing.JFrame {
         }
         
         if(!flag){
-            //invalid_password.setText("Password should contain lowercase and numerical characters only.");
+            invalid_password.setText("Password should contain lowercase and numerical characters only.");
             return false; 
         }
         
-        //invalid_password.setText("");
+        invalid_password.setText("");
         if(u.equals(registerPasswordConfirm.getText())){
             return true;
         }
@@ -121,6 +121,7 @@ public class HomeScreen extends javax.swing.JFrame {
         }
         
         if(!flag){
+            invalid_cred.setText("Wrong username or password");
             return false; 
         }
         
@@ -181,6 +182,9 @@ public class HomeScreen extends javax.swing.JFrame {
         signUpButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         loginButton = new javax.swing.JButton();
+        invalid_cred = new javax.swing.JLabel();
+        invalid = new javax.swing.JLabel();
+        invalid_password = new javax.swing.JLabel();
         Home = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -288,10 +292,45 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
+        invalid.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        invalid.setForeground(new java.awt.Color(255, 51, 51));
+
+        invalid_password.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        invalid_password.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout LoginSignUpLayout = new javax.swing.GroupLayout(LoginSignUp);
         LoginSignUp.setLayout(LoginSignUpLayout);
         LoginSignUpLayout.setHorizontalGroup(
             LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSignUpLayout.createSequentialGroup()
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(registerPasswordConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(registerPassword)))
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(registerUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(invalid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(invalid_password, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
+                .addGap(6, 6, 6))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSignUpLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LoginSignUpLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(LoginSignUpLayout.createSequentialGroup()
                 .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LoginSignUpLayout.createSequentialGroup()
@@ -315,37 +354,16 @@ public class HomeScreen extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jLabel20)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel18)
-                            .addComponent(loginUsername)
-                            .addComponent(loginPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                            .addGroup(LoginSignUpLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSignUpLayout.createSequentialGroup()
-                .addGap(0, 56, Short.MAX_VALUE)
-                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(LoginSignUpLayout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(registerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(LoginSignUpLayout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(registerUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(LoginSignUpLayout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(LoginSignUpLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(signUpButton))
-                            .addComponent(registerPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(65, 65, 65))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSignUpLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(invalid_cred, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel18)
+                                .addComponent(loginUsername)
+                                .addComponent(loginPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)))))
+                .addContainerGap(111, Short.MAX_VALUE))
+            .addGroup(LoginSignUpLayout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(signUpButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LoginSignUpLayout.setVerticalGroup(
@@ -362,11 +380,13 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registerUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
+                    .addComponent(jLabel15)
+                    .addComponent(invalid, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
+                    .addComponent(jLabel16)
+                    .addComponent(invalid_password, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registerPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,12 +402,14 @@ public class HomeScreen extends javax.swing.JFrame {
                     .addComponent(loginUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(loginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginButton)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(invalid_cred, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         Container.add(LoginSignUp, "card5");
@@ -973,59 +995,6 @@ public class HomeScreen extends javax.swing.JFrame {
            Container.revalidate();
     }//GEN-LAST:event_backButton2ActionPerformed
 
-    private void registerUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_registerUsernameActionPerformed
-
-    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
-        Container.removeAll();
-        Container.repaint();
-        Container.revalidate();
-        //add
-        Connection myCon = null;
-        Statement myStmnt = null;
-        System.out.println("check_username: " + check_username());
-        System.out.println("check_password: " + check_password());
-        if(check_username() && check_password()){
-            try{
-                myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound","root","n!gg3|2f@gg0t");
-                myStmnt = myCon.createStatement();
-                myStmnt.executeUpdate("INSERT INTO user(Username, Password)VALUES('" + registerUsername.getText() + "', '" + registerPassword.getText() + "')");
-                //success.setText("Registration Succesful");
-            }catch(Exception a){
-                a.printStackTrace();
-            }
-            try{
-                if(myStmnt!=null)
-                    myStmnt.close();
-            }catch(Exception a){
-                a.printStackTrace();
-            }
-            Container.add(Home);
-            Container.repaint();
-            Container.revalidate();
-        }
-    }//GEN-LAST:event_signUpButtonActionPerformed
-
-    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        // TODO add your handling code here:
-        Container.removeAll();
-        Container.repaint();
-        Container.revalidate();
-        //add 
-        if(check_credentials()){
-            currentUser=loginUsername.getText();
-            Container.add(Home);
-            Container.repaint();
-            Container.revalidate();
-        }
-        else{
-            Container.add(LoginSignUp);
-            Container.repaint();
-            Container.revalidate();
-        }
-    }//GEN-LAST:event_loginButtonActionPerformed
-
     private void backButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButton1ActionPerformed
         // TODO add your handling code here:
         Container.removeAll();
@@ -1172,6 +1141,64 @@ public class HomeScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addItemSubmitActionPerformed
 
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        // TODO add your handling code here:
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        //add
+        if(check_credentials()){
+            currentUser=loginUsername.getText();
+            Container.add(Home);
+            Container.repaint();
+            Container.revalidate();
+        }
+        else{
+            Container.add(LoginSignUp);
+            Container.repaint();
+            Container.revalidate();
+        }
+    }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        //add
+        Connection myCon = null;
+        Statement myStmnt = null;
+        System.out.println("check_username: " + check_username());
+        System.out.println("check_password: " + check_password());
+        if(check_username() && check_password()){
+            try{
+                myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound","root","n!gg3|2f@gg0t");
+                myStmnt = myCon.createStatement();
+                myStmnt.executeUpdate("INSERT INTO user(Username, Password)VALUES('" + registerUsername.getText() + "', '" + registerPassword.getText() + "')");
+                //success.setText("Registration Succesful");
+            }catch(Exception a){
+                a.printStackTrace();
+            }
+            try{
+                if(myStmnt!=null)
+                myStmnt.close();
+            }catch(Exception a){
+                a.printStackTrace();
+            }
+            Container.add(Home);
+            Container.repaint();
+            Container.revalidate();
+        }
+        else{
+            Container.add(LoginSignUp);
+            Container.repaint();
+            Container.revalidate();
+        }
+    }//GEN-LAST:event_signUpButtonActionPerformed
+
+    private void registerUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registerUsernameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1227,6 +1254,9 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JTextArea descrField;
     private javax.swing.JButton foundButton;
     private javax.swing.JRadioButton foundRadio;
+    private javax.swing.JLabel invalid;
+    private javax.swing.JLabel invalid_cred;
+    private javax.swing.JLabel invalid_password;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
