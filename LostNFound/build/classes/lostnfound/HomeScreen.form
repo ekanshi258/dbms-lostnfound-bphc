@@ -99,11 +99,11 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LoginEmail" max="32767" attributes="0"/>
-                                  <Component id="LoginPassword" pref="153" max="32767" attributes="0"/>
+                                  <Component id="loginUsername" max="32767" attributes="0"/>
+                                  <Component id="loginPassword" pref="153" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="HomeScreenLogin" min="-2" pref="65" max="-2" attributes="0"/>
+                                      <Component id="loginButton" min="-2" pref="65" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -116,12 +116,12 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="RegisterPassword" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="registerPassword" min="-2" pref="154" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="RegisterEmail" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="registerUsername" min="-2" pref="154" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
@@ -129,9 +129,9 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                      <Component id="HomeScreenSignUp" min="-2" max="-2" attributes="0"/>
+                                      <Component id="signUpButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="RegisterPasswordConfirm" min="-2" pref="154" max="-2" attributes="0"/>
+                                  <Component id="registerPasswordConfirm" min="-2" pref="154" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -157,37 +157,37 @@
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="RegisterEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="registerUsername" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="RegisterPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="registerPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="RegisterPasswordConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="registerPasswordConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="HomeScreenSignUp" min="-2" max="-2" attributes="0"/>
+                      <Component id="signUpButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="LoginEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="loginUsername" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="LoginPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="loginPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="HomeScreenLogin" min="-2" max="-2" attributes="0"/>
+                      <Component id="loginButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="71" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -217,21 +217,18 @@
                 <Property name="text" type="java.lang.String" value="Sign up here:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="RegisterEmail">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="f201xxxx@hyderabad.bits-pilani.ac.in"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="registerUsername">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RegisterEmailActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registerUsernameActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="RegisterPassword">
+            <Component class="javax.swing.JPasswordField" name="registerPassword">
             </Component>
-            <Component class="javax.swing.JPasswordField" name="RegisterPasswordConfirm">
+            <Component class="javax.swing.JPasswordField" name="registerPasswordConfirm">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Email:"/>
+                <Property name="text" type="java.lang.String" value="Username"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
@@ -254,31 +251,31 @@
                 <Property name="text" type="java.lang.String" value="Email:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="LoginEmail">
+            <Component class="javax.swing.JTextField" name="loginUsername">
             </Component>
-            <Component class="javax.swing.JPasswordField" name="LoginPassword">
+            <Component class="javax.swing.JPasswordField" name="loginPassword">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Password:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="HomeScreenSignUp">
+            <Component class="javax.swing.JButton" name="signUpButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sign Up"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HomeScreenSignUpActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="signUpButtonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
             </Component>
-            <Component class="javax.swing.JButton" name="HomeScreenLogin">
+            <Component class="javax.swing.JButton" name="loginButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Login"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HomeScreenLoginActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -319,8 +316,8 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="ButtonFound" min="-2" pref="171" max="-2" attributes="0"/>
-                                          <Component id="ButtonLost" min="-2" pref="171" max="-2" attributes="0"/>
+                                          <Component id="foundButton" min="-2" pref="171" max="-2" attributes="0"/>
+                                          <Component id="lostButton" min="-2" pref="171" max="-2" attributes="0"/>
                                           <Component id="jLabel2" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -337,7 +334,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="yourLost3" min="-2" pref="107" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ButtonLogOut" min="-2" max="-2" attributes="0"/>
+                              <Component id="logOut1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -348,12 +345,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ButtonLogOut" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="yourLost3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="yourFound3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="logOut1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
@@ -366,9 +363,9 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ButtonLost" min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="lostButton" min="-2" pref="59" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ButtonFound" min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="foundButton" min="-2" pref="59" max="-2" attributes="0"/>
                       <EmptySpace pref="143" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -401,7 +398,7 @@
                 <Property name="text" type="java.lang.String" value="Welcome To"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonLost">
+            <Component class="javax.swing.JButton" name="lostButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Yu Gothic UI Semilight" size="14" style="1"/>
@@ -409,10 +406,10 @@
                 <Property name="label" type="java.lang.String" value="Lost Something?"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLostActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lostButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonFound">
+            <Component class="javax.swing.JButton" name="foundButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Yu Gothic UI Semilight" size="14" style="1"/>
@@ -420,12 +417,12 @@
                 <Property name="label" type="java.lang.String" value="Found Something?"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonFoundActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="foundButtonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator2">
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonLogOut">
+            <Component class="javax.swing.JButton" name="logOut1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -442,7 +439,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLogOutActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logOut1ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="yourLost3">
@@ -478,7 +475,7 @@
                       <EmptySpace pref="70" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="ButtonBack1" min="-2" max="-2" attributes="0"/>
+                              <Component id="backButton1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -486,7 +483,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="yourLost2" min="-2" pref="107" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ButtonLogOut1" min="-2" max="-2" attributes="0"/>
+                              <Component id="logOut2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -511,7 +508,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                      <Component id="ButtonAddFoundItem" min="-2" max="-2" attributes="0"/>
+                      <Component id="addFoundItem" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -519,12 +516,12 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ButtonLogOut1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="yourLost2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="yourFound2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="logOut2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator3" min="-2" max="-2" attributes="0"/>
@@ -535,11 +532,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ButtonAddFoundItem" min="-2" max="-2" attributes="0"/>
+                      <Component id="addFoundItem" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="235" max="-2" attributes="0"/>
                       <EmptySpace pref="39" max="32767" attributes="0"/>
-                      <Component id="ButtonBack1" min="-2" max="-2" attributes="0"/>
+                      <Component id="backButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -595,7 +592,7 @@
                 <Property name="text" type="java.lang.String" value="OR"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonAddFoundItem">
+            <Component class="javax.swing.JButton" name="addFoundItem">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -603,20 +600,20 @@
                 <Property name="text" type="java.lang.String" value="Add a found item"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonAddFoundItemActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addFoundItemActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonBack1">
+            <Component class="javax.swing.JButton" name="backButton1">
               <Properties>
                 <Property name="label" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonBack1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButton1ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator3">
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonLogOut1">
+            <Component class="javax.swing.JButton" name="logOut2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -633,7 +630,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLogOut1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logOut2ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="yourLost2">
@@ -673,7 +670,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel11" min="-2" pref="127" max="-2" attributes="0"/>
-                                  <Component id="ButtonAddLostItem" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addLostItem" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
@@ -689,7 +686,7 @@
                           <Component id="jScrollPane4" alignment="1" pref="359" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                              <Component id="ButtonBack2" min="-2" max="-2" attributes="0"/>
+                              <Component id="backButton2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="155" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -698,7 +695,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="yourLost1" min="-2" pref="107" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ButtonLogOut2" min="-2" max="-2" attributes="0"/>
+                              <Component id="logOut3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -709,12 +706,12 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ButtonLogOut2" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="yourLost1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="yourFound1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="logOut3" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator4" min="-2" pref="2" max="-2" attributes="0"/>
@@ -725,11 +722,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                      <Component id="ButtonAddLostItem" min="-2" max="-2" attributes="0"/>
+                      <Component id="addLostItem" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane4" min="-2" pref="235" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ButtonBack2" min="-2" max="-2" attributes="0"/>
+                      <Component id="backButton2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -754,7 +751,7 @@
                 <Property name="text" type="java.lang.String" value="OR"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonAddLostItem">
+            <Component class="javax.swing.JButton" name="addLostItem">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="14" style="0"/>
@@ -763,15 +760,15 @@
                 <Property name="label" type="java.lang.String" value="Add a lost item"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonAddLostItemActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addLostItemActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonBack2">
+            <Component class="javax.swing.JButton" name="backButton2">
               <Properties>
                 <Property name="label" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonBack2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButton2ActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane4">
@@ -805,7 +802,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="ButtonLogOut2">
+            <Component class="javax.swing.JButton" name="logOut3">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -822,7 +819,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLogOut2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logOut3ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator4">
@@ -874,19 +871,19 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="AddItemSubmit" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addItemSubmit" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="RadioLost" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lostRadio" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                          <Component id="RadioFound" min="-2" max="-2" attributes="0"/>
+                                          <Component id="foundRadio" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="TitleField" max="32767" attributes="0"/>
-                                      <Component id="ComboCategory" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="titleField" max="32767" attributes="0"/>
+                                      <Component id="categoryCombo" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jScrollPane1" max="32767" attributes="0"/>
-                                      <Component id="LocationField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="DatePicker" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="locationField" alignment="0" max="32767" attributes="0"/>
                                   </Group>
+                                  <Component id="datePicker1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -894,13 +891,13 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ButtonBack3" min="-2" pref="54" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                      <Component id="backButton3" min="-2" pref="54" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" pref="20" max="32767" attributes="0"/>
                       <Component id="yourFound" min="-2" pref="127" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="yourLost" min="-2" pref="107" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ButtonLogOut3" min="-2" max="-2" attributes="0"/>
+                      <Component id="logOut4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -910,9 +907,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ButtonBack3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="backButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="yourLost" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ButtonLogOut3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="logOut4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="yourFound" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -922,18 +919,18 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="RadioLost" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="RadioFound" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lostRadio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="foundRadio" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TitleField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="titleField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ComboCategory" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="categoryCombo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -947,15 +944,15 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LocationField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="locationField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="DatePicker" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="datePicker1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="AddItemSubmit" min="-2" max="-2" attributes="0"/>
+                      <Component id="addItemSubmit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="67" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -975,7 +972,7 @@
                 <Property name="text" type="java.lang.String" value="This item was:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="RadioLost">
+            <Component class="javax.swing.JRadioButton" name="lostRadio">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -986,10 +983,10 @@
                 <Property name="text" type="java.lang.String" value="Lost"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioLostActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lostRadioActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="RadioFound">
+            <Component class="javax.swing.JRadioButton" name="foundRadio">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -1005,14 +1002,14 @@
                 <Property name="text" type="java.lang.String" value="Title:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TitleField">
+            <Component class="javax.swing.JTextField" name="titleField">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Category:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="ComboCategory">
+            <Component class="javax.swing.JComboBox" name="categoryCombo">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="12">
@@ -1047,7 +1044,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="DescrField">
+                <Component class="javax.swing.JTextArea" name="descrField">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
@@ -1068,9 +1065,9 @@
                 <Property name="text" type="java.lang.String" value="Approx. location:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="LocationField">
+            <Component class="javax.swing.JTextField" name="locationField">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LocationFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="locationFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
@@ -1078,14 +1075,14 @@
                 <Property name="text" type="java.lang.String" value="Date:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="AddItemSubmit">
+            <Component class="javax.swing.JButton" name="addItemSubmit">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Submit"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator5">
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonLogOut3">
+            <Component class="javax.swing.JButton" name="logOut4">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -1102,10 +1099,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLogOut3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logOut4ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="ButtonBack3">
+            <Component class="javax.swing.JButton" name="backButton3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Back"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1115,10 +1112,8 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonBack3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButton3ActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="DatePicker">
             </Component>
             <Component class="javax.swing.JButton" name="yourLost">
               <Properties>
@@ -1129,6 +1124,8 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Items You&apos;ve Found"/>
               </Properties>
+            </Component>
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="datePicker1">
             </Component>
           </SubComponents>
         </Container>
