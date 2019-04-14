@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -883,7 +885,7 @@
                                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                                       <Component id="locationField" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="datePicker1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="datePicker" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -949,7 +951,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="datePicker1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="datePicker" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="addItemSubmit" min="-2" max="-2" attributes="0"/>
@@ -1079,6 +1081,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Submit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addItemSubmitActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator5">
             </Component>
@@ -1125,7 +1130,7 @@
                 <Property name="text" type="java.lang.String" value="Items You&apos;ve Found"/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="datePicker1">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="datePicker">
             </Component>
           </SubComponents>
         </Container>

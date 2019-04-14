@@ -20,6 +20,9 @@ public class HomeScreen extends javax.swing.JFrame {
         initComponents();
     }
 
+    int ind=1337;
+    String currentUser;
+    
     boolean check_username()
     {
         Connection myCon = null;
@@ -157,6 +160,7 @@ public class HomeScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         Container = new javax.swing.JPanel();
         LoginSignUp = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -234,7 +238,7 @@ public class HomeScreen extends javax.swing.JFrame {
         backButton3 = new javax.swing.JButton();
         yourLost = new javax.swing.JButton();
         yourFound = new javax.swing.JButton();
-        datePicker1 = new org.jdesktop.swingx.JXDatePicker();
+        datePicker = new org.jdesktop.swingx.JXDatePicker();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 204));
@@ -782,6 +786,11 @@ public class HomeScreen extends javax.swing.JFrame {
         jLabel28.setText("Date:");
 
         addItemSubmit.setText("Submit");
+        addItemSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItemSubmitActionPerformed(evt);
+            }
+        });
 
         logOut4.setBackground(new java.awt.Color(255, 204, 204));
         logOut4.setForeground(new java.awt.Color(153, 153, 153));
@@ -838,7 +847,7 @@ public class HomeScreen extends javax.swing.JFrame {
                                 .addComponent(categoryCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1)
                                 .addComponent(locationField))
-                            .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(AddItemsLayout.createSequentialGroup()
                 .addContainerGap()
@@ -891,7 +900,7 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(addItemSubmit)
                 .addContainerGap(67, Short.MAX_VALUE))
@@ -1005,6 +1014,7 @@ public class HomeScreen extends javax.swing.JFrame {
         Container.revalidate();
         //add 
         if(check_credentials()){
+            currentUser=loginUsername.getText();
             Container.add(Home);
             Container.repaint();
             Container.revalidate();
@@ -1071,10 +1081,6 @@ public class HomeScreen extends javax.swing.JFrame {
         Container.revalidate();
     }//GEN-LAST:event_logOut3ActionPerformed
 
-    private void lostRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lostRadioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lostRadioActionPerformed
-
     private void locationFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_locationFieldActionPerformed
@@ -1091,7 +1097,7 @@ public class HomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_logOut4ActionPerformed
 
     private void backButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButton3ActionPerformed
-        // TODO add your handling code here:
+
          Container.removeAll();
         Container.repaint();
         Container.revalidate();
@@ -1100,6 +1106,71 @@ public class HomeScreen extends javax.swing.JFrame {
         Container.repaint();
         Container.revalidate();
     }//GEN-LAST:event_backButton3ActionPerformed
+
+    private void lostRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lostRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lostRadioActionPerformed
+
+    private void addItemSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemSubmitActionPerformed
+        
+        String table;
+        if(lostRadio.isSelected()){
+            table="lost";
+        }
+        else{
+            table="found";
+        }
+        
+        Connection myconn = null;
+        Statement mystat = null;
+        ResultSet myresult = null;
+        
+        try {
+            myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "n!gg3|2f@gg0t");
+            mystat = myconn.createStatement();
+            myresult = mystat.executeQuery("select max(ID) from "+table);
+            if(myresult.next()){
+                if(myresult.getInt(1)==0){
+                    ind++;
+                }
+                else{
+                    ind = myresult.getInt(1)+1;
+                }
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        try {
+            if (myresult != null) {
+                myresult.close();
+            }
+            if (mystat != null) {
+                mystat.close();
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        String title=titleField.getText();
+        String category=categoryCombo.getSelectedItem().toString();
+        String description=descrField.getText();
+        String location=locationField.getText();
+        java.util.Date date = datePicker.getDate();
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+        
+        try {
+            myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "n!gg3|2f@gg0t");
+            String p = "INSERT INTO " + table +" VALUES("+ind+",\'"+currentUser+"\'"+",\'"+title+"\'"+",\'"+category+"\'"+",\'"+description+"\'"+",\'"+location+"\',?)";
+            PreparedStatement pstat = myconn.prepareStatement(p);
+            pstat.setDate(1, sqlDate);
+            System.out.println(pstat);
+            pstat.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_addItemSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1150,8 +1221,9 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton backButton2;
     private javax.swing.JButton backButton3;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> categoryCombo;
-    private org.jdesktop.swingx.JXDatePicker datePicker1;
+    private org.jdesktop.swingx.JXDatePicker datePicker;
     private javax.swing.JTextArea descrField;
     private javax.swing.JButton foundButton;
     private javax.swing.JRadioButton foundRadio;
