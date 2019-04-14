@@ -243,6 +243,7 @@ public class HomeScreen extends javax.swing.JFrame {
         yourLost = new javax.swing.JButton();
         yourFound = new javax.swing.JButton();
         datePicker = new org.jdesktop.swingx.JXDatePicker();
+        added_confirm = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 204));
@@ -849,27 +850,31 @@ public class HomeScreen extends javax.swing.JFrame {
                         .addComponent(jLabel21))
                     .addGroup(AddItemsLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel28))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addItemSubmit)
-                            .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(AddItemsLayout.createSequentialGroup()
-                                    .addComponent(lostRadio)
-                                    .addGap(10, 10, 10)
-                                    .addComponent(foundRadio))
-                                .addComponent(titleField)
-                                .addComponent(categoryCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1)
-                                .addComponent(locationField))
-                            .addComponent(datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(AddItemsLayout.createSequentialGroup()
+                                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel28))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(addItemSubmit)
+                                    .addGroup(AddItemsLayout.createSequentialGroup()
+                                        .addComponent(lostRadio)
+                                        .addGap(10, 10, 10)
+                                        .addComponent(foundRadio))
+                                    .addComponent(titleField)
+                                    .addComponent(categoryCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane1)
+                                    .addComponent(locationField)
+                                    .addComponent(datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(AddItemsLayout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addComponent(added_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(AddItemsLayout.createSequentialGroup()
                 .addContainerGap()
@@ -925,7 +930,9 @@ public class HomeScreen extends javax.swing.JFrame {
                     .addComponent(datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(addItemSubmit)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(added_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         Container.add(AddItems, "card6");
@@ -1119,6 +1126,7 @@ public class HomeScreen extends javax.swing.JFrame {
                 mystat.close();
             }
         } catch (Exception e) {
+            added_confirm.setText("Failed to add item");
             System.out.println(e);
         }
         
@@ -1136,7 +1144,9 @@ public class HomeScreen extends javax.swing.JFrame {
             pstat.setDate(1, sqlDate);
             System.out.println(pstat);
             pstat.executeUpdate();
+            added_confirm.setText("Item Added");
         } catch (Exception e) {
+            added_confirm.setText("Failed to add item");
             System.out.println(e);
         }
     }//GEN-LAST:event_addItemSubmitActionPerformed
@@ -1244,6 +1254,7 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton addFoundItem;
     private javax.swing.JButton addItemSubmit;
     private javax.swing.JButton addLostItem;
+    private javax.swing.JLabel added_confirm;
     private javax.swing.JButton backButton1;
     private javax.swing.JButton backButton2;
     private javax.swing.JButton backButton3;
