@@ -28,8 +28,8 @@ public class HomeScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        Container = new javax.swing.JPanel();
+        LoginSignUp = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -48,7 +48,7 @@ public class HomeScreen extends javax.swing.JFrame {
         HomeScreenSignUp = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         HomeScreenLogin = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        Home = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -57,7 +57,7 @@ public class HomeScreen extends javax.swing.JFrame {
         ButtonFound = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         ButtonLogOut = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        FoundItems = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -67,7 +67,7 @@ public class HomeScreen extends javax.swing.JFrame {
         ButtonBack1 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         ButtonLogOut1 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        LostItems = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -77,7 +77,7 @@ public class HomeScreen extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         ButtonLogOut2 = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
-        jPanel7 = new javax.swing.JPanel();
+        AddItems = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         RadioLost = new javax.swing.JRadioButton();
@@ -102,9 +102,9 @@ public class HomeScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 204));
 
-        jPanel2.setLayout(new java.awt.CardLayout());
+        Container.setLayout(new java.awt.CardLayout());
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        LoginSignUp.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel5.setText("Welcome to");
 
@@ -148,69 +148,69 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout LoginSignUpLayout = new javax.swing.GroupLayout(LoginSignUp);
+        LoginSignUp.setLayout(LoginSignUpLayout);
+        LoginSignUpLayout.setHorizontalGroup(
+            LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LoginSignUpLayout.createSequentialGroup()
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
                         .addGap(131, 131, 131)
                         .addComponent(jLabel5))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addComponent(jLabel6))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
                         .addGap(137, 137, 137)
                         .addComponent(jLabel7))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(jLabel14))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
+                        .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(LoginSignUpLayout.createSequentialGroup()
                                 .addGap(81, 81, 81)
                                 .addComponent(jLabel19))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSignUpLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel20)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel18)
                             .addComponent(LoginEmail)
                             .addComponent(LoginPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(LoginSignUpLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(HomeScreenLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSignUpLayout.createSequentialGroup()
                 .addGap(0, 21, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(RegisterPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(RegisterEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(LoginSignUpLayout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(LoginSignUpLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(HomeScreenSignUp))
                             .addComponent(RegisterPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(65, 65, 65))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSignUpLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        LoginSignUpLayout.setVerticalGroup(
+            LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LoginSignUpLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -220,15 +220,15 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RegisterEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RegisterPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RegisterPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -238,11 +238,11 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LoginEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LoginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -250,9 +250,9 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel3, "card5");
+        Container.add(LoginSignUp, "card5");
 
-        jPanel1.setBackground(new java.awt.Color(255, 224, 163));
+        Home.setBackground(new java.awt.Color(255, 224, 163));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
         jLabel2.setText("Lost and Found");
@@ -291,42 +291,42 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
+        Home.setLayout(HomeLayout);
+        HomeLayout.setHorizontalGroup(
+            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator2)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(146, 146, 146))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(110, 110, 110))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(HomeLayout.createSequentialGroup()
+                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(HomeLayout.createSequentialGroup()
+                        .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(HomeLayout.createSequentialGroup()
                                 .addGap(82, 82, 82)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(ButtonFound, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ButtonLost, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(HomeLayout.createSequentialGroup()
                                 .addGap(136, 136, 136)
                                 .addComponent(jLabel1)))
                         .addGap(0, 71, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(ButtonLogOut)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        HomeLayout.setVerticalGroup(
+            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HomeLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addComponent(ButtonLogOut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -346,9 +346,9 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addContainerGap(132, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel1, "card2");
+        Container.add(Home, "card2");
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 204));
+        FoundItems.setBackground(new java.awt.Color(255, 255, 204));
 
         jLabel8.setText("Found Something?");
 
@@ -400,42 +400,42 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout FoundItemsLayout = new javax.swing.GroupLayout(FoundItems);
+        FoundItems.setLayout(FoundItemsLayout);
+        FoundItemsLayout.setHorizontalGroup(
+            FoundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
             .addComponent(jSeparator3)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGroup(FoundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
                         .addComponent(ButtonBack1)
                         .addGap(150, 150, 150))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
                         .addComponent(ButtonLogOut1)
                         .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(97, 97, 97))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(FoundItemsLayout.createSequentialGroup()
+                .addGroup(FoundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FoundItemsLayout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(jLabel9))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(FoundItemsLayout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jLabel10)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(FoundItemsLayout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addComponent(ButtonAddFoundItem)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        FoundItemsLayout.setVerticalGroup(
+            FoundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FoundItemsLayout.createSequentialGroup()
                 .addComponent(ButtonLogOut1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -454,9 +454,9 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel5, "card3");
+        Container.add(FoundItems, "card3");
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 204));
+        LostItems.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel11.setText("Lost Something?");
 
@@ -509,41 +509,41 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout LostItemsLayout = new javax.swing.GroupLayout(LostItems);
+        LostItems.setLayout(LostItemsLayout);
+        LostItemsLayout.setHorizontalGroup(
+            LostItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LostItemsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGroup(LostItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LostItemsLayout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addGap(134, 134, 134))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LostItemsLayout.createSequentialGroup()
+                        .addGroup(LostItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ButtonAddLostItem))
                         .addGap(101, 101, 101))))
-            .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGroup(LostItemsLayout.createSequentialGroup()
                 .addGap(156, 156, 156)
                 .addComponent(jLabel13)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LostItemsLayout.createSequentialGroup()
+                .addGroup(LostItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LostItemsLayout.createSequentialGroup()
                         .addGap(149, 149, 149)
                         .addComponent(ButtonBack2)
                         .addGap(0, 120, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(LostItemsLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(ButtonLogOut2)))
                 .addContainerGap())
             .addComponent(jSeparator4)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        LostItemsLayout.setVerticalGroup(
+            LostItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LostItemsLayout.createSequentialGroup()
                 .addComponent(ButtonLogOut2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -562,9 +562,9 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel4, "card4");
+        Container.add(LostItems, "card4");
 
-        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+        AddItems.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel21.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 24)); // NOI18N
         jLabel21.setText("Add an Item");
@@ -630,19 +630,19 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout AddItemsLayout = new javax.swing.GroupLayout(AddItems);
+        AddItems.setLayout(AddItemsLayout);
+        AddItemsLayout.setHorizontalGroup(
+            AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator5)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(AddItemsLayout.createSequentialGroup()
+                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddItemsLayout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addComponent(jLabel21))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGroup(AddItemsLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel22)
                             .addComponent(jLabel23)
                             .addComponent(jLabel24)
@@ -651,10 +651,10 @@ public class HomeScreen extends javax.swing.JFrame {
                             .addComponent(jLabel27)
                             .addComponent(jLabel28))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AddItemSubmit)
-                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(AddItemsLayout.createSequentialGroup()
                                     .addComponent(RadioLost)
                                     .addGap(10, 10, 10)
                                     .addComponent(RadioFound))
@@ -663,19 +663,19 @@ public class HomeScreen extends javax.swing.JFrame {
                                 .addComponent(jScrollPane1)
                                 .addComponent(LocationField)
                                 .addComponent(DatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGroup(AddItemsLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(ButtonBack3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(46, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+            .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddItemsLayout.createSequentialGroup()
                     .addContainerGap(281, Short.MAX_VALUE)
                     .addComponent(ButtonLogOut3)
                     .addContainerGap()))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        AddItemsLayout.setVerticalGroup(
+            AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddItemsLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(ButtonBack3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -683,44 +683,44 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel21)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(RadioLost)
                     .addComponent(RadioFound))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(TitleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
                     .addComponent(ComboCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddItemsLayout.createSequentialGroup()
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel26))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
                     .addComponent(LocationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(DatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(AddItemSubmit)
                 .addContainerGap(68, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(AddItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AddItemsLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(ButtonLogOut3)
                     .addContainerGap(410, Short.MAX_VALUE)))
         );
 
-        jPanel2.add(jPanel7, "card6");
+        Container.add(AddItems, "card6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -728,14 +728,14 @@ public class HomeScreen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -745,46 +745,46 @@ public class HomeScreen extends javax.swing.JFrame {
     private void ButtonFoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFoundActionPerformed
         // TODO add your handling code here:
         //remove all panels
-           jPanel2.removeAll();
-           jPanel2.repaint();
-           jPanel2.revalidate();
+           Container.removeAll();
+           Container.repaint();
+           Container.revalidate();
            //add
-           jPanel2.add(jPanel5);
-           jPanel2.repaint();
-           jPanel2.revalidate();
+           Container.add(FoundItems);
+           Container.repaint();
+           Container.revalidate();
     }//GEN-LAST:event_ButtonFoundActionPerformed
 
     private void ButtonLostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLostActionPerformed
            // TODO add your handling code here:
            //remove all panels
-           jPanel2.removeAll();
-           jPanel2.repaint();
-           jPanel2.revalidate();
+           Container.removeAll();
+           Container.repaint();
+           Container.revalidate();
            //add
-           jPanel2.add(jPanel4);
-           jPanel2.repaint();
-           jPanel2.revalidate();
+           Container.add(LostItems);
+           Container.repaint();
+           Container.revalidate();
     }//GEN-LAST:event_ButtonLostActionPerformed
 
     private void ButtonAddLostItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddLostItemActionPerformed
         // TODO add your handling code here:
-         jPanel2.removeAll();
-        jPanel2.repaint();
-        jPanel2.revalidate();
+         Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
         //add
-        jPanel2.add(jPanel7);
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.add(AddItems);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_ButtonAddLostItemActionPerformed
 
     private void ButtonBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBack2ActionPerformed
-       jPanel2.removeAll();
-           jPanel2.repaint();
-           jPanel2.revalidate();
+       Container.removeAll();
+           Container.repaint();
+           Container.revalidate();
            //add
-           jPanel2.add(jPanel1);
-           jPanel2.repaint();
-           jPanel2.revalidate();
+           Container.add(Home);
+           Container.repaint();
+           Container.revalidate();
     }//GEN-LAST:event_ButtonBack2ActionPerformed
 
     private void RegisterEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterEmailActionPerformed
@@ -792,79 +792,79 @@ public class HomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_RegisterEmailActionPerformed
 
     private void HomeScreenSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeScreenSignUpActionPerformed
-        jPanel2.removeAll();
-           jPanel2.repaint();
-           jPanel2.revalidate();
+        Container.removeAll();
+           Container.repaint();
+           Container.revalidate();
            //add
-           jPanel2.add(jPanel1);
-           jPanel2.repaint();
-           jPanel2.revalidate();        // TODO add your handling code here:
+           Container.add(Home);
+           Container.repaint();
+           Container.revalidate();        // TODO add your handling code here:
     }//GEN-LAST:event_HomeScreenSignUpActionPerformed
 
     private void HomeScreenLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeScreenLoginActionPerformed
         // TODO add your handling code here:
-        jPanel2.removeAll();
-           jPanel2.repaint();
-           jPanel2.revalidate();
+        Container.removeAll();
+           Container.repaint();
+           Container.revalidate();
            //add
-           jPanel2.add(jPanel1);
-           jPanel2.repaint();
-           jPanel2.revalidate();
+           Container.add(Home);
+           Container.repaint();
+           Container.revalidate();
     }//GEN-LAST:event_HomeScreenLoginActionPerformed
 
     private void ButtonBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBack1ActionPerformed
         // TODO add your handling code here:
-        jPanel2.removeAll();
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
         //add
-        jPanel2.add(jPanel1);
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.add(Home);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_ButtonBack1ActionPerformed
 
     private void ButtonAddFoundItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddFoundItemActionPerformed
         // TODO add your handling code here:
-         jPanel2.removeAll();
-        jPanel2.repaint();
-        jPanel2.revalidate();
+         Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
         //add
-        jPanel2.add(jPanel7);
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.add(AddItems);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_ButtonAddFoundItemActionPerformed
 
     private void ButtonLogOut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLogOut1ActionPerformed
         // TODO add your handling code here:
-        jPanel2.removeAll();
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
         //add
-        jPanel2.add(jPanel3);
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.add(LoginSignUp);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_ButtonLogOut1ActionPerformed
 
     private void ButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLogOutActionPerformed
         // TODO add your handling code here:
-         jPanel2.removeAll();
-        jPanel2.repaint();
-        jPanel2.revalidate();
+         Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
         //add
-        jPanel2.add(jPanel3);
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.add(LoginSignUp);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_ButtonLogOutActionPerformed
 
     private void ButtonLogOut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLogOut2ActionPerformed
         // TODO add your handling code here:
-         jPanel2.removeAll();
-        jPanel2.repaint();
-        jPanel2.revalidate();
+         Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
         //add
-        jPanel2.add(jPanel3);
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.add(LoginSignUp);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_ButtonLogOut2ActionPerformed
 
     private void RadioLostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioLostActionPerformed
@@ -877,24 +877,24 @@ public class HomeScreen extends javax.swing.JFrame {
 
     private void ButtonLogOut3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLogOut3ActionPerformed
         // TODO add your handling code here:
-         jPanel2.removeAll();
-        jPanel2.repaint();
-        jPanel2.revalidate();
+         Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
         //add
-        jPanel2.add(jPanel3);
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.add(LoginSignUp);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_ButtonLogOut3ActionPerformed
 
     private void ButtonBack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBack3ActionPerformed
         // TODO add your handling code here:
-         jPanel2.removeAll();
-        jPanel2.repaint();
-        jPanel2.revalidate();
+         Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
         //add
-        jPanel2.add(jPanel1);
-        jPanel2.repaint();
-        jPanel2.revalidate();
+        Container.add(Home);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_ButtonBack3ActionPerformed
 
     /**
@@ -934,6 +934,7 @@ public class HomeScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddItemSubmit;
+    private javax.swing.JPanel AddItems;
     private javax.swing.JButton ButtonAddFoundItem;
     private javax.swing.JButton ButtonAddLostItem;
     private javax.swing.JButton ButtonBack1;
@@ -946,13 +947,18 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton ButtonLogOut3;
     private javax.swing.JButton ButtonLost;
     private javax.swing.JComboBox<String> ComboCategory;
+    private javax.swing.JPanel Container;
     private org.jdesktop.swingx.JXDatePicker DatePicker;
     private javax.swing.JTextArea DescrField;
+    private javax.swing.JPanel FoundItems;
+    private javax.swing.JPanel Home;
     private javax.swing.JButton HomeScreenLogin;
     private javax.swing.JButton HomeScreenSignUp;
     private javax.swing.JTextField LocationField;
     private javax.swing.JTextField LoginEmail;
     private javax.swing.JPasswordField LoginPassword;
+    private javax.swing.JPanel LoginSignUp;
+    private javax.swing.JPanel LostItems;
     private javax.swing.JRadioButton RadioFound;
     private javax.swing.JRadioButton RadioLost;
     private javax.swing.JTextField RegisterEmail;
@@ -988,13 +994,7 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
