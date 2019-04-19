@@ -7,17 +7,23 @@ package lostnfound;
 
 import java.util.*;
 import java.sql.*;
+import javax.swing.table.*;
+import javax.swing.*;
 /**
  *
  * @author Ekanshi Agrawal
+ * @author Kushagra Srivastava
+ * @author Kunal Verma
  */
 public class HomeScreen extends javax.swing.JFrame {
 
     /**
      * Creates new form HomeScreen
      */
+    DefaultTableModel model;
     public HomeScreen() {
         initComponents();
+        model = (DefaultTableModel) jTable1.getModel();
     }
 
     int ind=1337;
@@ -37,7 +43,7 @@ public class HomeScreen extends javax.swing.JFrame {
             invalid.setText("");
         }
         try {
-            myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "n!gg3|2f@gg0t");
+            myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "kunal123");
             myStmnt = myCon.createStatement();
             myRs = myStmnt.executeQuery("SELECT * FROM user WHERE Username = '" + registerUsername.getText() + "'");
             if(myRs.next()){
@@ -129,7 +135,7 @@ public class HomeScreen extends javax.swing.JFrame {
         Statement myStmnt = null;
         ResultSet myRs = null;
         try{
-            myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound","root","n!gg3|2f@gg0t");
+            myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound","root","kunal123");
             myStmnt = myCon.createStatement();
             myRs = myStmnt.executeQuery("SELECT * FROM user WHERE Username = '" + loginUsername.getText() + "' AND Password = '" + loginPassword.getText() + "'");
             //System.out.println(loginEmail.getText()+" "+loginPassword.getText());
@@ -201,6 +207,8 @@ public class HomeScreen extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         addFoundItem = new javax.swing.JButton();
         backButton1 = new javax.swing.JButton();
@@ -208,6 +216,7 @@ public class HomeScreen extends javax.swing.JFrame {
         logOut2 = new javax.swing.JButton();
         yourLost2 = new javax.swing.JButton();
         yourFound2 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         LostItems = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -216,10 +225,13 @@ public class HomeScreen extends javax.swing.JFrame {
         backButton2 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         logOut3 = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
         yourLost1 = new javax.swing.JButton();
         yourFound1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         AddItems = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -242,8 +254,8 @@ public class HomeScreen extends javax.swing.JFrame {
         backButton3 = new javax.swing.JButton();
         yourLost = new javax.swing.JButton();
         yourFound = new javax.swing.JButton();
-        datePicker = new org.jdesktop.swingx.JXDatePicker();
         added_confirm = new javax.swing.JLabel();
+        datePicker = new org.jdesktop.swingx.JXDatePicker();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 204));
@@ -361,7 +373,7 @@ public class HomeScreen extends javax.swing.JFrame {
                                 .addComponent(jLabel18)
                                 .addComponent(loginUsername)
                                 .addComponent(loginPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)))))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
             .addGroup(LoginSignUpLayout.createSequentialGroup()
                 .addGap(139, 139, 139)
                 .addComponent(signUpButton)
@@ -384,10 +396,11 @@ public class HomeScreen extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(invalid, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(registerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16)
-                    .addComponent(invalid_password, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(invalid_password, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(registerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(LoginSignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registerPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -485,7 +498,7 @@ public class HomeScreen extends javax.swing.JFrame {
                             .addGroup(HomeLayout.createSequentialGroup()
                                 .addGap(136, 136, 136)
                                 .addComponent(jLabel1)))
-                        .addGap(0, 106, Short.MAX_VALUE))
+                        .addGap(0, 123, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(yourFound3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -534,15 +547,29 @@ public class HomeScreen extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(204, 255, 255));
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User", "Title", "Category", "Title 4", "Date"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable2);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 358, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 238, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel6);
@@ -579,25 +606,27 @@ public class HomeScreen extends javax.swing.JFrame {
 
         yourFound2.setText("Items You've Found");
 
+        jButton2.setText("View Found Items");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout FoundItemsLayout = new javax.swing.GroupLayout(FoundItems);
         FoundItems.setLayout(FoundItemsLayout);
         FoundItemsLayout.setHorizontalGroup(
             FoundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
             .addComponent(jSeparator3)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
-                .addGroup(FoundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
-                        .addComponent(backButton1)
-                        .addGap(150, 150, 150))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
-                        .addComponent(yourFound2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(yourLost2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(logOut2)
-                        .addContainerGap())))
+                .addContainerGap(90, Short.MAX_VALUE)
+                .addComponent(yourFound2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(yourLost2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logOut2)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -615,6 +644,12 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addGap(93, 93, 93)
                 .addComponent(addFoundItem)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundItemsLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backButton1)
+                .addGap(100, 100, 100))
         );
         FoundItemsLayout.setVerticalGroup(
             FoundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -637,7 +672,9 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(backButton1)
+                .addGroup(FoundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton1)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
 
@@ -672,15 +709,31 @@ public class HomeScreen extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(204, 255, 255));
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User", "Title", "Category", "Description", "Location", "Date"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 358, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 238, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jScrollPane4.setViewportView(jPanel8);
@@ -699,6 +752,13 @@ public class HomeScreen extends javax.swing.JFrame {
         yourLost1.setText("Your Lost Items");
 
         yourFound1.setText("Items You've Found");
+
+        jButton1.setText("View Lost Items");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout LostItemsLayout = new javax.swing.GroupLayout(LostItems);
         LostItems.setLayout(LostItemsLayout);
@@ -721,13 +781,9 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LostItemsLayout.createSequentialGroup()
                 .addGroup(LostItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LostItemsLayout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(backButton2)
-                        .addGap(0, 155, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                     .addGroup(LostItemsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 90, Short.MAX_VALUE)
                         .addComponent(yourFound1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(yourLost1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -735,6 +791,12 @@ public class HomeScreen extends javax.swing.JFrame {
                         .addComponent(logOut3)))
                 .addContainerGap())
             .addComponent(jSeparator4)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LostItemsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(57, 57, 57)
+                .addComponent(backButton2)
+                .addGap(72, 72, 72))
         );
         LostItemsLayout.setVerticalGroup(
             LostItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -757,7 +819,9 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(backButton2)
+                .addGroup(LostItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton2)
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
@@ -879,7 +943,7 @@ public class HomeScreen extends javax.swing.JFrame {
             .addGroup(AddItemsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(backButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 30, Short.MAX_VALUE)
                 .addComponent(yourFound, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(yourLost, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -932,7 +996,7 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addComponent(addItemSubmit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(added_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         Container.add(AddItems, "card6");
@@ -1102,7 +1166,7 @@ public class HomeScreen extends javax.swing.JFrame {
         ResultSet myresult = null;
         
         try {
-            myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "n!gg3|2f@gg0t");
+            myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "kunal123");
             mystat = myconn.createStatement();
             myresult = mystat.executeQuery("select max(ID) from "+table);
             if(myresult.next()){
@@ -1138,7 +1202,7 @@ public class HomeScreen extends javax.swing.JFrame {
         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
         
         try {
-            myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "n!gg3|2f@gg0t");
+            myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "kunal123");
             String p = "INSERT INTO " + table +" VALUES("+ind+",\'"+currentUser+"\'"+",\'"+title+"\'"+",\'"+category+"\'"+",\'"+description+"\'"+",\'"+location+"\',?)";
             PreparedStatement pstat = myconn.prepareStatement(p);
             pstat.setDate(1, sqlDate);
@@ -1181,7 +1245,7 @@ public class HomeScreen extends javax.swing.JFrame {
         System.out.println("check_password: " + check_password());
         if(check_username() && check_password()){
             try{
-                myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound","root","n!gg3|2f@gg0t");
+                myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound","root","kunal123");
                 myStmnt = myCon.createStatement();
                 myStmnt.executeUpdate("INSERT INTO user(Username, Password)VALUES('" + registerUsername.getText() + "', '" + registerPassword.getText() + "')");
                 //success.setText("Registration Succesful");
@@ -1208,6 +1272,68 @@ public class HomeScreen extends javax.swing.JFrame {
     private void registerUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerUsernameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Connection myCon = null;
+        Statement myStmnt = null;
+        ResultSet myRs = null;
+        try {
+            myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "kunal123");
+            myStmnt = myCon.createStatement();
+            myRs = myStmnt.executeQuery("SELECT * FROM lost");
+            int rowCount = jTable1.getRowCount();
+            model = (DefaultTableModel)jTable1.getModel();
+            for(int i=rowCount-1;i>=0;i--)
+                model.removeRow(i);
+            while(myRs.next()){
+                
+                model.insertRow(jTable1.getRowCount(), new Object[]{myRs.getString("User"),myRs.getString("Title")
+                , myRs.getString("Category"), myRs.getString("Description"), myRs.getString("Location"), myRs.getString("Date")});
+            }
+        } catch (Exception exp) {
+            exp.printStackTrace();
+        }
+        try{
+            if(myStmnt!=null)
+                myStmnt.close();
+            if(myRs!=null)
+                myRs.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Connection myCon = null;
+        Statement myStmnt = null;
+        ResultSet myRs = null;
+        try {
+            myCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/lostfound", "root", "kunal123");
+            myStmnt = myCon.createStatement();
+            myRs = myStmnt.executeQuery("SELECT * FROM found");
+            int rowCount = jTable2.getRowCount();
+            model = (DefaultTableModel)jTable2.getModel();
+            for(int i=rowCount-1;i>=0;i--)
+                model.removeRow(i);
+            while(myRs.next()){
+                
+                model.insertRow(jTable2.getRowCount(), new Object[]{myRs.getString("User"),myRs.getString("Title")
+                , myRs.getString("Category"), myRs.getString("Description"), myRs.getString("Location"), myRs.getString("Date")});
+            }
+        } catch (Exception exp) {
+            exp.printStackTrace();
+        }
+        try{
+            if(myStmnt!=null)
+                myStmnt.close();
+            if(myRs!=null)
+                myRs.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1268,6 +1394,8 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JLabel invalid;
     private javax.swing.JLabel invalid_cred;
     private javax.swing.JLabel invalid_password;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1300,12 +1428,16 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField locationField;
     private javax.swing.JButton logOut1;
     private javax.swing.JButton logOut2;
